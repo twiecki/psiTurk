@@ -46,7 +46,8 @@ class Participant(Base):
 
     datastring = Column(Text)
     comments = Column(Text)
-  
+    language = Column(String(128))
+ 
     def __init__(self, **kwargs):
         self.uniqueid = "{workerid}:{assignmentid}".format(**kwargs)
         for key in kwargs:
