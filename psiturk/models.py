@@ -43,11 +43,12 @@ class Participant(Base):
     visit = Column(String(128))
     screening_number = Column(Integer)
     experiment = Column(String(128))
+    experimenter = Column(String(128))
 
     datastring = Column(Text)
     comments = Column(Text)
     language = Column(String(128))
- 
+
     def __init__(self, **kwargs):
         self.uniqueid = "{workerid}:{assignmentid}".format(**kwargs)
         for key in kwargs:
@@ -126,4 +127,3 @@ class Participant(Base):
         except:
             print("Error reading record:", self)
             return("")
-
