@@ -35,7 +35,6 @@ class Participant(Base):
     bonus = Column(Float, default = 0)
     status = Column(Integer, default = 1)
     mode = Column(String(128))
-
     # New fields
     site_id = Column(Integer)
     study_id = Column(String(128))
@@ -44,6 +43,7 @@ class Participant(Base):
     screening_number = Column(Integer)
     experiment = Column(String(128))
     experimenter = Column(String(128))
+    completed = Column(Integer, default=0)
 
     datastring = Column(Text)
     comments = Column(Text)
